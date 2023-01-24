@@ -1,0 +1,18 @@
+<div class="main-div">
+  <app-others-comments></app-others-comments>
+
+  <div
+    class="user-comments"
+    *ngFor="let userCom of userComments; let i = index"
+  >
+    <app-user-comment
+      [userComment]="userCom"
+      [index]="i"
+      (indexForDelete)="deleteHandler($event)"
+    ></app-user-comment>
+  </div>
+
+  <app-write-comment
+    (wrotedComment)="wrotedComHandler($event)"
+  ></app-write-comment>
+</div>

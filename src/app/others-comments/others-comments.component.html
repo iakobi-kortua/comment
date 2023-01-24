@@ -1,0 +1,7 @@
+<div *ngFor="let com of comments; let i = index">
+  <app-main-comments [com]="com" [i]="i"></app-main-comments>
+
+  <div *ngFor="let reply of com.reply">
+    <app-others-reply [reply]="reply" [i]="i"></app-others-reply>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="user-comment-sections">
+  <div class="voice">
+    <div class="volume-up-down">
+      <div class="up no-cursor" (click)="plus()">
+        <img src="../assets/images/icon-plus.svg" alt="plus" />
+      </div>
+      <div class="point">
+        <h3>{{ score }}</h3>
+      </div>
+      <div class="down no-cursor" (click)="minus()">
+        <img src="../assets/images/icon-minus.svg" alt="minus" />
+      </div>
+    </div>
+  </div>
+  <div class="comment">
+    <div class="user-reply-small">
+      <div class="user-name-date">
+        <div class="image">
+          <img
+            class="user-image"
+            id="julImg"
+            src="../assets/images/avatars/image-juliusomo.png"
+          />
+        </div>
+        <div class="user-name">
+          <p><strong>juliusomo</strong></p>
+        </div>
+        <div class="date"><p>Now</p></div>
+      </div>
+      <div class="delete-edit">
+        <div class="delete" id="Delete">
+          <img class="delete-svg" src="../assets/images/icon-delete.svg" />
+          <p class="delete-svg" (click)="deleteCom()">Delete</p>
+        </div>
+        <div class="edit">
+          <img class="edit-svg" src="../assets/images/icon-edit.svg" />
+          <p class="edit-svg" (click)="allowEdit()">Edit</p>
+        </div>
+      </div>
+    </div>
+    <div class="content-small">
+      <p class="content-p" *ngIf="!editCom">{{ userComment }}</p>
+      <div style="display: flex" *ngIf="editCom">
+        <textarea
+          class="wc-input-txt"
+          [(ngModel)]="editedComContent"
+        ></textarea>
+        <button
+          class="wc-btn"
+          style="margin-left: 20px"
+          (click)="subEditedCom()"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

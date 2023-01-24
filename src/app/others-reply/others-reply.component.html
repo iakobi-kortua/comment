@@ -1,0 +1,38 @@
+<div class="comment-sections">
+  <div class="comment">
+    <div class="user-reply">
+      <div class="user-name-date">
+        <div class="image">
+          <img
+            class="user-image"
+            src=" ../assets/{{
+              reply.user.image.png.split('/').slice(1).join('/')
+            }}"
+          />
+        </div>
+        <div class="user-name">
+          <p>
+            <strong>{{ reply.user.username }}</strong>
+          </p>
+        </div>
+        <div class="date">
+          <p>{{ reply.createdAt }}</p>
+        </div>
+      </div>
+      <div
+        class="delete"
+        *ngIf="reply.user.username == myName"
+        (click)="deleteReply(i)"
+      >
+        <img class="delete-svg" src="../assets/images/icon-delete.svg" />
+        <p class="delete-svg">Delete</p>
+      </div>
+      <div class="reply">
+        <p class="reply-txt">Replied</p>
+      </div>
+    </div>
+    <div class="content">
+      <p>{{ reply.content }}</p>
+    </div>
+  </div>
+</div>

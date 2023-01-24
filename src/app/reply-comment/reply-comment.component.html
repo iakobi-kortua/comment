@@ -1,0 +1,18 @@
+<div class="write-comment">
+  <div class="wc-user-image">
+    <img
+      class="wc-user-image-style"
+      src="../assets/images/avatars/image-juliusomo.png"
+      alt="user-image"
+    />
+  </div>
+  <div class="wc-input">
+    <textarea
+      class="wc-input-txt"
+      [(ngModel)]="commentsService.replaiedCom"
+    ></textarea>
+  </div>
+  <div class="send-btn">
+    <button class="wc-btn" (click)="addRepliedCom(i)">Replay</button>
+  </div>
+</div>

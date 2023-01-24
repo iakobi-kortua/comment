@@ -1,0 +1,44 @@
+<div class="comment-sections">
+  <div class="voice">
+    <div class="volume-up-down">
+      <div class="up" (click)="plus()">
+        <img src="../assets/images/icon-plus.svg" alt="plus" />
+      </div>
+      <div class="point">
+        <h3>{{ com.score }}</h3>
+      </div>
+      <div class="down" (click)="minus()">
+        <img src="../assets/images/icon-minus.svg" alt="minus" />
+      </div>
+    </div>
+  </div>
+  <div class="comment">
+    <div class="user-reply">
+      <div class="user-name-date">
+        <div class="image">
+          <img class="user-image" src="{{ com.userImg }}" />
+        </div>
+        <div class="user-name">
+          <p>
+            <strong>{{ com.userName }}</strong>
+          </p>
+        </div>
+        <div class="date">
+          <p>{{ com.date }}</p>
+        </div>
+      </div>
+      <div class="reply">
+        <img class="reply-svg" src="../assets/images/icon-reply.svg" />
+        <p class="reply-txt" (click)="allowReply = !allowReply">Reply</p>
+      </div>
+    </div>
+    <div class="content">
+      <p>{{ com.content }}</p>
+    </div>
+  </div>
+</div>
+<app-reply-comment
+  *ngIf="allowReply"
+  [i]="i"
+  (changedAllowReplay)="allowReplayhandler($event)"
+></app-reply-comment>
